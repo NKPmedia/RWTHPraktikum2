@@ -111,15 +111,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Fahrrad.h" />
     <ClInclude Include="Fahrzeug.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="MathTools.h" />
+    <ClInclude Include="Pkw.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Aufgabenblock_1.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Fahrrad.cpp" />
     <ClCompile Include="Fahrzeug.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MathTools.cpp" />
+    <ClCompile Include="Pkw.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

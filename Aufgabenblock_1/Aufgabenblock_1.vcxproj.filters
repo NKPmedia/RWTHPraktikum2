@@ -13,12 +13,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Quelldateien\Fahrzeuge">
+      <UniqueIdentifier>{3c809e82-7b19-454e-9aa0-89f1a00bfc54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Fahrzeuge">
+      <UniqueIdentifier>{732e87aa-7d9f-464a-8a5b-cfb10252fd6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Libs">
+      <UniqueIdentifier>{7ad08df1-f4ce-4cf3-9572-61f9ac87ce62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Libs">
+      <UniqueIdentifier>{be6a5743-1f48-4123-82c3-c67976b6a2c4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Fahrzeug.h">
+      <Filter>Headerdateien\Fahrzeuge</Filter>
+    </ClInclude>
+    <ClInclude Include="Pkw.h">
+      <Filter>Headerdateien\Fahrzeuge</Filter>
+    </ClInclude>
+    <ClInclude Include="Fahrrad.h">
+      <Filter>Headerdateien\Fahrzeuge</Filter>
+    </ClInclude>
+    <ClInclude Include="MathTools.h">
+      <Filter>Headerdateien\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,7 +56,16 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Fahrzeug.cpp">
-      <Filter>Quelldateien</Filter>
+      <Filter>Quelldateien\Fahrzeuge</Filter>
+    </ClCompile>
+    <ClCompile Include="Pkw.cpp">
+      <Filter>Quelldateien\Fahrzeuge</Filter>
+    </ClCompile>
+    <ClCompile Include="Fahrrad.cpp">
+      <Filter>Quelldateien\Fahrzeuge</Filter>
+    </ClCompile>
+    <ClCompile Include="MathTools.cpp">
+      <Filter>Quelldateien\Libs</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

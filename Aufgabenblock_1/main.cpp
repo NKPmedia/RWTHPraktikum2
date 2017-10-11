@@ -1,24 +1,120 @@
 #include "Fahrzeug.h"
+#include "Pkw.h"
+#include "Fahrrad.h"
+#include "MathTools.h"
 #include <iostream>
 #include <iomanip>
 #include <vector>
+#include "main.h"
 
 using  namespace std;
 
 double dGlobaleZeit = 0.0;
 
+void vTankeAlleFahrzeuge(vector<Fahrzeug*> &fahrzeuge)
+{
+	vector<Fahrzeug*>::iterator fahrzeugeIterator = fahrzeuge.begin();
+	while (fahrzeugeIterator != fahrzeuge.end()) {
+		(*fahrzeugeIterator)->dTanken();
+		fahrzeugeIterator++;
+	}
+}
+
 void vSchreibeHeaderFahrzeugAusgabeTabelle()
 {
 	cout << "\nID";
+
 	cout.width(10);
 	cout << "Name";
+
 	cout.width(10);
 	cout << ":";
+
 	cout.width(10);
 	cout << "MaxKmh";
+
+	cout.width(10);
+	cout << "Kmh";
+
 	cout.width(20);
-	cout << "GesamtStrecke" << endl;
-	cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+	cout << "GesamtStrecke";
+
+	cout.width(20);
+	cout << "Gesamtverbrauch";
+
+	cout.width(20);
+	cout << "Verbrauch/100Km";
+
+	cout.width(10);
+	cout << "Tank" << endl;
+
+	cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+}
+
+void vAufgabe_2()
+{
+	/*
+	Zeige das der Copy-Konstruktors funktionier
+	Ich lasse ihn nur die konstanten Daten kopieren, da ein neues Auto immer bei z.B. 0km anfängt
+
+	*/
+	dGlobaleZeit = 1.0;
+	Pkw* pPkw = new Pkw("PkwCopy", 10, 20, 5);
+	pPkw->vAbfertigung();
+	Pkw* pCopyPkw = new Pkw(*pPkw);
+	cout << *pPkw << endl << *pCopyPkw << endl << endl;
+
+	Fahrrad* pFahrrad= new Fahrrad("FahrradCopy", 30);
+	pFahrrad->vAbfertigung();
+	Fahrrad* pCopyFahrrad = new Fahrrad(*pFahrrad);
+	cout << *pFahrrad << endl << *pCopyFahrrad << endl << endl;
+
+	Pkw* pPkw2 = new Pkw("t",0,0);
+	*pPkw2 = *pPkw;
+	cout << *pPkw2 << endl << *pPkw << endl << endl;
+
+	//Frage wie viele Pkw und Fahrräder erstellt werden sollen
+	printf("Wie viele Pkw sollen erstellt werden?");
+	int iAnzahlZuErzeugenderPkw = 0;
+	scanf_s("%d", &iAnzahlZuErzeugenderPkw);
+
+	printf("Wie viele Fahhräder sollen erstellt werden?");
+	int iAnzahlZuErzeugenderFahrraeder = 0;
+	scanf_s("%d", &iAnzahlZuErzeugenderFahrraeder);
+
+	vector<Fahrzeug*> vFahrzeuge;
+
+	for (int i = 1; i <= iAnzahlZuErzeugenderFahrraeder; i++)
+	{
+		Fahrrad* fahrrad = new Fahrrad("Fahrrad " + to_string(i), 20*i);
+		vFahrzeuge.push_back(fahrrad);
+	}
+	for (int i = 1; i <= iAnzahlZuErzeugenderPkw; i++)
+	{
+		Pkw* pkw = new Pkw("Pwk " + to_string(i), 10 * i, 20, 5);
+		vFahrzeuge.push_back(pkw);
+	}
+
+	//Lass die Autos fahren
+	dGlobaleZeit = 0.0;
+	double dZeitTakt = 1.0;
+	while (dGlobaleZeit <= 10) {
+		vSchreibeHeaderFahrzeugAusgabeTabelle();
+
+		if (MathTools::nearly_equal(dGlobaleZeit, 3.0))
+		{
+			vTankeAlleFahrzeuge(vFahrzeuge);
+		}
+
+		vector<Fahrzeug*>::iterator fahrzeugeIterator = vFahrzeuge.begin();
+		while (fahrzeugeIterator != vFahrzeuge.end()) {
+			(*fahrzeugeIterator)->vAbfertigung();
+			cout << *(*fahrzeugeIterator) << endl;
+			fahrzeugeIterator++;
+		}
+
+		dGlobaleZeit += dZeitTakt;
+	}
 }
 
 void vAufgabe_1()
@@ -98,7 +194,8 @@ void vAufgabe_1_deb()
 
 int main()
 {
-	vAufgabe_1_deb();
+	vAufgabe_2();
+	cin.get();
 	cin.get();
 	return 0;
 }

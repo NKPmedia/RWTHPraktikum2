@@ -51,6 +51,32 @@ void vSchreibeHeaderFahrzeugAusgabeTabelle()
 	cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
 }
 
+void vAufgabe_3()
+{
+	/*
+	Zeige das der Copy-Konstruktors funktionier
+	Ich lasse ihn nur die konstanten Daten kopieren, da ein neues Auto immer bei z.B. 0km anfängt
+
+	*/
+	dGlobaleZeit = 1.0;
+	Pkw* pPkw = new Pkw("PkwCopy", 10, 20, 5);
+	pPkw->vAbfertigung();
+	Pkw* pCopyPkw = new Pkw(*pPkw);
+	cout << *pPkw << endl << *pCopyPkw << endl << endl;
+
+	Fahrrad* pFahrrad = new Fahrrad("FahrradCopy", 30);
+	pFahrrad->vAbfertigung();
+	Fahrrad* pCopyFahrrad = new Fahrrad(*pFahrrad);
+	cout << *pFahrrad << endl << *pCopyFahrrad << endl << endl;
+
+	Pkw* pPkw2 = new Pkw("t", 0, 0);
+	*pPkw2 = *pPkw;
+	cout << *pPkw2 << endl << *pPkw << endl << endl;
+
+	cout << "sollte 0 sein, da copy noch nicht gefahren!" << endl;
+	cout << (*pFahrrad < *pCopyFahrrad) << endl;
+}
+
 void vAufgabe_2()
 {
 	/*
@@ -109,7 +135,7 @@ void vAufgabe_2()
 		vector<Fahrzeug*>::iterator fahrzeugeIterator = vFahrzeuge.begin();
 		while (fahrzeugeIterator != vFahrzeuge.end()) {
 			(*fahrzeugeIterator)->vAbfertigung();
-			cout << *(*fahrzeugeIterator) << endl;
+			(*fahrzeugeIterator)->vAusgabeFahrzeugInfosInOneRow();
 			fahrzeugeIterator++;
 		}
 
@@ -198,7 +224,7 @@ void vAufgabe_1_deb()
 
 int main()
 {
-	vAufgabe_1();
+	vAufgabe_3();
 	cin.get();
 	cin.get();
 	return 0;

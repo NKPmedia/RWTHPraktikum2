@@ -9,13 +9,13 @@ Falls ihr Fehler findet, meldet diese doch bitte über ein Issue. Dann kann ich 
 
 Funktionen:
 - Aufgabenblock1
-  - Aufgabe_1
+  - Aufgabe_1  
   4 Fahrzeuge erstellen und abfertigen
-  - Aufgabe_1_deb
+  - Aufgabe_1_deb  
   wie 1 nur mit eingebautem Fehler für den Debugger
-  - Aufgabe_2
+  - Aufgabe_2  
   Testen des Copy Konstruktors und der = Überladung.
-  Erstellen von n Fahrzeugen (Eingabe) und abfertigung dieser
+  Erstellen von n Fahrzeugen (Eingabe) und Abfertigung dieser
 - Aufgabenblock 2
   - vAufgabe_2_6a
   - vAufgabe_2_5_4

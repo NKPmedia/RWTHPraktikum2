@@ -26,3 +26,6 @@ Funktionen:
 - Aufgabenblock 3 noch Fehlerbehaftet
   - vAufgabe_3_7
   - vAufgabe_3_8
+
+Ich rate nicht meinen Code 1 zu 1 zu übernehmen. Das hilft nicht und wird vor allem bei Testaten nicht akzeptiert.
+Mein Code ist rein als Inspiration gedacht, falls man keine gute Idee hat.

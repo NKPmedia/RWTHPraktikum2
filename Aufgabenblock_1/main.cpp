@@ -121,8 +121,12 @@ void vAufgabe_1()
 {
 	Fahrzeug testCarstatic1;
 	Fahrzeug testCarstatic2("testName1",30);
-	Fahrzeug* testCarDynamic1 = new Fahrzeug();
-	Fahrzeug* testCarDynamic2 = new Fahrzeug("testName2",20);
+	string name1;
+	string name2;
+	getline(std::cin, name1);
+	getline(std::cin, name2);
+	Fahrzeug* testCarDynamic1 = new Fahrzeug(name1);
+	Fahrzeug* testCarDynamic2 = new Fahrzeug(name2,20);
 
 	vSchreibeHeaderFahrzeugAusgabeTabelle();
 	testCarDynamic1->vAusgabeFahrzeugInfosInOneRow();
@@ -194,7 +198,7 @@ void vAufgabe_1_deb()
 
 int main()
 {
-	vAufgabe_2();
+	vAufgabe_1();
 	cin.get();
 	cin.get();
 	return 0;

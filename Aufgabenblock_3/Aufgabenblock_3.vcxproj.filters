@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quelldateien">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien\Verkehrsobjekte">
+      <UniqueIdentifier>{0b95dba4-be30-4a22-b79d-c21c0fb4390b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Verkehrsobjekte">
+      <UniqueIdentifier>{28d1695a-74c3-408d-acae-750c2b52015a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Libs">
+      <UniqueIdentifier>{ed78426b-6739-4b16-8416-90185e9a5d05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Libs">
+      <UniqueIdentifier>{9977589c-3f32-4f16-8ce2-c7859aeb84b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Verhalten">
+      <UniqueIdentifier>{1bfd726d-e3e1-4637-9aff-25332994eb06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Verhalten">
+      <UniqueIdentifier>{aca99104-ae47-4bcf-b206-ef5d3f50938e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="AktivesVerkehrsobjekt.cpp">
+      <Filter>Quelldateien\Verkehrsobjekte</Filter>
+    </ClCompile>
+    <ClCompile Include="Fahrrad.cpp">
+      <Filter>Quelldateien\Verkehrsobjekte</Filter>
+    </ClCompile>
+    <ClCompile Include="Fahrzeug.cpp">
+      <Filter>Quelldateien\Verkehrsobjekte</Filter>
+    </ClCompile>
+    <ClCompile Include="Pkw.cpp">
+      <Filter>Quelldateien\Verkehrsobjekte</Filter>
+    </ClCompile>
+    <ClCompile Include="Weg.cpp">
+      <Filter>Quelldateien\Verkehrsobjekte</Filter>
+    </ClCompile>
+    <ClCompile Include="MathTools.cpp">
+      <Filter>Quelldateien\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="Streckenende.cpp">
+      <Filter>Quelldateien\Verhalten</Filter>
+    </ClCompile>
+    <ClCompile Include="Losfahren.cpp">
+      <Filter>Quelldateien\Verhalten</Filter>
+    </ClCompile>
+    <ClCompile Include="FzgVerhalten.cpp">
+      <Filter>Quelldateien\Verhalten</Filter>
+    </ClCompile>
+    <ClCompile Include="FzgParken.cpp">
+      <Filter>Quelldateien\Verhalten</Filter>
+    </ClCompile>
+    <ClCompile Include="FzgFahren.cpp">
+      <Filter>Quelldateien\Verhalten</Filter>
+    </ClCompile>
+    <ClCompile Include="FahrAusnahme.cpp">
+      <Filter>Quelldateien\Verhalten</Filter>
+    </ClCompile>
+    <ClCompile Include="DataHalterFahrzeug.cpp">
+      <Filter>Quelldateien\Verkehrsobjekte</Filter>
+    </ClCompile>
+    <ClCompile Include="Kreuzung.cpp">
+      <Filter>Quelldateien\Verkehrsobjekte</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SimuClient.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Streckenende.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="AktivesVerkehrsobjekt.h">
+      <Filter>Headerdateien\Verkehrsobjekte</Filter>
+    </ClInclude>
+    <ClInclude Include="Fahrrad.h">
+      <Filter>Headerdateien\Verkehrsobjekte</Filter>
+    </ClInclude>
+    <ClInclude Include="Fahrzeug.h">
+      <Filter>Headerdateien\Verkehrsobjekte</Filter>
+    </ClInclude>
+    <ClInclude Include="Weg.h">
+      <Filter>Headerdateien\Verkehrsobjekte</Filter>
+    </ClInclude>
+    <ClInclude Include="Pkw.h">
+      <Filter>Headerdateien\Verkehrsobjekte</Filter>
+    </ClInclude>
+    <ClInclude Include="MathTools.h">
+      <Filter>Headerdateien\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="LazyListe.h">
+      <Filter>Headerdateien\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="LazyAktion.h">
+      <Filter>Headerdateien\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="FahrAusnahme.h">
+      <Filter>Headerdateien\Verhalten</Filter>
+    </ClInclude>
+    <ClInclude Include="FzgFahren.h">
+      <Filter>Headerdateien\Verhalten</Filter>
+    </ClInclude>
+    <ClInclude Include="FzgParken.h">
+      <Filter>Headerdateien\Verhalten</Filter>
+    </ClInclude>
+    <ClInclude Include="FzgVerhalten.h">
+      <Filter>Headerdateien\Verhalten</Filter>
+    </ClInclude>
+    <ClInclude Include="Losfahren.h">
+      <Filter>Headerdateien\Verhalten</Filter>
+    </ClInclude>
+    <ClInclude Include="DataHalterFahrzeug.h">
+      <Filter>Headerdateien\Verkehrsobjekte</Filter>
+    </ClInclude>
+    <ClInclude Include="Kreuzung.h">
+      <Filter>Headerdateien\Verkehrsobjekte</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="SimuClient.lib" />
+  </ItemGroup>
+</Project>

@@ -23,9 +23,11 @@ Funktionen:
   - vAufgabe_2_4_9_Parken
   - vAufgabe_2_4_9_amEndAngekommen
   - vAufgabe_2_4_5
-- Aufgabenblock 3 noch Fehlerbehaftet
+- Aufgabenblock 3
   - vAufgabe_3_7
+  Ein Straße zum Test vom Überholen und dem Zeitverzögertem Starten
   - vAufgabe_3_8
+  Das statische Straßennetz. 3 Autos fahren.
 
 Ich rate nicht meinen Code 1 zu 1 zu übernehmen. Das hilft nicht und wird vor allem bei Testaten nicht akzeptiert.
 Mein Code ist rein als Inspiration gedacht, falls man keine gute Idee hat.

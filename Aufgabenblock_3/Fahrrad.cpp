@@ -24,7 +24,7 @@ Fahrrad::~Fahrrad()
 double Fahrrad::dGeschwindigkeit()
 {
 	int iGefahrene20Km = this->dGetGesamtGefahreneStrecke() / 20.0;
-	double iProzentVonMaxGesch = 1 - (iGefahrene20Km * Fahrrad::iABZUGPRO20KM);
+	double iProzentVonMaxGesch = pow(1 - Fahrrad::iABZUGPRO20KM, iGefahrene20Km);
 
 	double dAktuelleGeschwindigkeit = this->p_dMaxGeschwindigkeit * iProzentVonMaxGesch;
 

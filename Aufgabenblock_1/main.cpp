@@ -146,13 +146,13 @@ void vAufgabe_2()
 void vAufgabe_1()
 {
 	Fahrzeug testCarstatic1;
-	Fahrzeug testCarstatic2("testName1",30);
+	Fahrzeug testCarstatic2("testName1", 30);
 	string name1;
 	string name2;
 	getline(std::cin, name1);
 	getline(std::cin, name2);
 	Fahrzeug* testCarDynamic1 = new Fahrzeug(name1);
-	Fahrzeug* testCarDynamic2 = new Fahrzeug(name2,20);
+	Fahrzeug* testCarDynamic2 = new Fahrzeug(name2, 20);
 
 	vSchreibeHeaderFahrzeugAusgabeTabelle();
 	testCarDynamic1->vAusgabeFahrzeugInfosInOneRow();
@@ -160,8 +160,8 @@ void vAufgabe_1()
 	testCarstatic1.vAusgabeFahrzeugInfosInOneRow();
 	testCarstatic2.vAusgabeFahrzeugInfosInOneRow();
 
-	double dZeitTakt = 500.0;
-	while (dGlobaleZeit <= 10000) {
+	double dZeitTakt = 1;
+	while (dGlobaleZeit <= 10) {
 		testCarDynamic1->vAbfertigung();
 		testCarDynamic2->vAbfertigung();
 		testCarstatic1.vAbfertigung();
@@ -195,8 +195,8 @@ void vAufgabe_1_deb()
 
 	fahrzeuge[2] = 0;
 
-	double dZeitTakt = 500.0;
-	while (dGlobaleZeit <= 10000) {
+	double dZeitTakt = 1;
+	while (dGlobaleZeit <= 10) {
 		
 		vector<Fahrzeug*>::iterator fahrzeugeIterator = fahrzeuge.begin();
 		int i = 3; //Nur für die Aufgabe mit dem Debugger und em Haltepunkt bei i == 3
@@ -224,7 +224,7 @@ void vAufgabe_1_deb()
 
 int main()
 {
-	vAufgabe_3();
+	vAufgabe_2();
 	cin.get();
 	cin.get();
 	return 0;

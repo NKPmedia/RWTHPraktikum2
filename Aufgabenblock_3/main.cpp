@@ -334,12 +334,12 @@ void vAufgabe_3_8()
 	Kreuzung* kr3 = new Kreuzung();
 	Kreuzung* kr4 = new Kreuzung();
 
-	/*kr1->vVerbinde("W12", "W21", 40, kr2, Weg::Innerorts, true);
+	kr1->vVerbinde("W12", "W21", 40, kr2, Weg::Innerorts, true);
 	kr2->vVerbinde("W23a", "W32a", 115, kr3, Weg::Autobahnbahn, false);
 	kr2->vVerbinde("W23b", "W32b", 40, kr3, Weg::Innerorts, true);
 	kr2->vVerbinde("W24", "W42", 55, kr4, Weg::Innerorts, true);
 	kr3->vVerbinde("W34", "W43", 85, kr4, Weg::Autobahnbahn, false);
-	kr4->vVerbinde("W44a", "W44b", 130, kr4, Weg::Landstraﬂe, false);*/
+	kr4->vVerbinde("W44a", "W44b", 130, kr4, Weg::Landstraﬂe, false);
 
 	bZeichneKreuzung(680, 40);
 	bZeichneKreuzung(680, 300);

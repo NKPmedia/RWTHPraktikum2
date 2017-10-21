@@ -1,9 +1,11 @@
 #pragma once
-#include "Weg.h"
 #include <list>
 #include <string>
+#include "Weg.h"
 
 using namespace std;
+
+class Fahrzeug;
 
 class Kreuzung
 {
@@ -20,10 +22,10 @@ public:
 	void vTanken(Fahrzeug* pZuTankenesFahrzeug);
 	void vAnnehmen(Fahrzeug* fahrzeug, double);
 	void vAbfertigen();
-	//Weg* pZufaelligerWeg(Weg*);
+	Weg* pZufaelligerWeg(Weg*);
 
 	void vSetTankstelle(double volumen);
-	list<Weg*> vGetWegfuehrendeStraﬂen();
+	void vAddWegFuehrendeStaﬂe(Weg* weg);
 
 private:
 	list<Weg*> p_pWegfuehrendeStraﬂen;

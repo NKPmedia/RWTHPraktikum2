@@ -1,5 +1,7 @@
 #include "Streckenende.h"
 #include <iostream>
+#include "Kreuzung.h"
+
 
 using namespace std;
 
@@ -25,6 +27,6 @@ void Streckenende::vBearbeiten()
 
 	this->p_pWeg->vAbgeben(this->p_pFahrzeug);
 	this->p_pWeg->pGetZielKreuzung()->vTanken(this->p_pFahrzeug);
-	//Weg* pNeuerWeg = this->p_pWeg->pGetZielKreuzung()->pZufaelligerWeg(this->p_pWeg);
-	//pNeuerWeg->vAnnehmen(this->p_pFahrzeug);
+	Weg* pNeuerWeg = this->p_pWeg->pGetZielKreuzung()->pZufaelligerWeg(this->p_pWeg);
+	pNeuerWeg->vAnnehmen(this->p_pFahrzeug);
 }

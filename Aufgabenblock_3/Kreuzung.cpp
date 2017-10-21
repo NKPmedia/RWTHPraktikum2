@@ -22,12 +22,12 @@ void Kreuzung::vVerbinde(string sNameHinweg, string sNameRueckweg, double dWegla
 	Weg* weg2 = new Weg(sNameRueckweg, dWeglaenge, dLimit, bUeberholverbot);
 	weg1->vSetZugehoerigerWeg(weg2);
 	weg2->vSetZugehoerigerWeg(weg1);
-	//weg1->vSetZielKreuzung(pZuVerbindendeKreuzung);
-	//weg2->vSetZielKreuzung(this);
+	weg1->vSetZielKreuzung(pZuVerbindendeKreuzung);
+	weg2->vSetZielKreuzung(this);
 
 
 	this->p_pWegfuehrendeStraﬂen.push_back(weg1);
-	pZuVerbindendeKreuzung->vGetWegfuehrendeStraﬂen().push_back(weg2);
+	pZuVerbindendeKreuzung->vAddWegFuehrendeStaﬂe(weg2);
 }
 
 void Kreuzung::vTanken(Fahrzeug * pZuTankenesFahrzeug)
@@ -57,7 +57,7 @@ void Kreuzung::vAbfertigen()
 	}
 }
 
-/*Weg * Kreuzung::pZufaelligerWeg(Weg * pHinWeg)
+Weg * Kreuzung::pZufaelligerWeg(Weg * pHinWeg)
 {
 	srand(time(NULL));
 
@@ -78,17 +78,17 @@ void Kreuzung::vAbfertigen()
 		advance(it, iWegNummer);
 		weg = (*it);
 	} 
-	while (weg == pHinWeg || weg->pGetZugehoerigerWeg() == weg);
+	while (weg == pHinWeg || pHinWeg->pGetZugehoerigerWeg() == weg);
 
 	return weg;
-}*/
+}
 
 void Kreuzung::vSetTankstelle(double volumen)
 {
 	this->p_dTankstelle = volumen;
 }
 
-list<Weg*> Kreuzung::vGetWegfuehrendeStraﬂen()
+void Kreuzung::vAddWegFuehrendeStaﬂe(Weg * weg)
 {
-	return this->p_pWegfuehrendeStraﬂen;
+	this->p_pWegfuehrendeStraﬂen.push_back(weg);
 }

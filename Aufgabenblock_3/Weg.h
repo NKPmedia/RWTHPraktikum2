@@ -3,13 +3,11 @@
 #include <list>
 #include <string>
 #include "LazyListe.h"
-#include "Kreuzung.h"
-#include "Weg.h"
-#include "Fahrzeug.h"
 
 using namespace std;
 
 class Fahrzeug;
+class Kreuzung;
 
 class Weg : public AktivesVerkehrsobjekt
 {

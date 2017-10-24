@@ -113,6 +113,25 @@ bool Weg::bIstUeberholverbot()
 	return this->p_bUeberholverbot;
 }
 
+Weg::GeschwindigkeitBegrenzung Weg::zuGeschwindigkeitBegrenzung(double gesch)
+{
+	if (gesch == 1) {
+		return Weg::Innerorts;
+	}
+	else if (gesch == 2)
+	{
+		return Weg::Landstraße;
+	}
+	else if (gesch == 3)
+	{
+		return Weg::Autobahnbahn;
+	}
+	else 
+	{
+		throw "ERROR: Falsche Gesch";
+	}
+}
+
 void Weg::vAnnehmen(Fahrzeug * fahrzeug)
 {
 	this->p_pFahrzeugeAufWeg.push_back(fahrzeug);

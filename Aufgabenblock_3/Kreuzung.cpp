@@ -30,6 +30,15 @@ void Kreuzung::vVerbinde(string sNameHinweg, string sNameRueckweg, double dWegla
 	pZuVerbindendeKreuzung->vAddWegFuehrendeStaße(weg2);
 }
 
+istream & Kreuzung::istreamEingabe(istream & in)
+{
+	AktivesVerkehrsobjekt::istreamEingabe(in);
+
+	in >> this->p_dTankstelle;
+
+	return in;
+}
+
 void Kreuzung::vTanken(Fahrzeug * pZuTankenesFahrzeug)
 {
 	if (this->p_dTankstelle <= 0)

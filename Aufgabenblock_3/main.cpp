@@ -11,6 +11,8 @@
 #include "LazyListe.h"
 #include <stdlib.h>
 #include "Kreuzung.h"
+#include <fstream>
+#include "Welt.h"
 
 using  namespace std;
 
@@ -395,10 +397,35 @@ void vAufgabe_3_8()
 
 }
 
+void vAufgabe_3_9()
+{
+	//bInitialisiereGrafik(1000, 1000);
 
+	ifstream fin("Simu.dat");
+	if (!fin.good())
+	{
+		cout << "ERROR mit Datei" << endl;
+	}
+		
+	Welt* welt = new Welt();
+	welt->vEinlesen(fin);
+
+	dGlobaleZeit = 0.0;
+	double dZeitTakt = 0.1;
+	while (dGlobaleZeit <= 100)
+	{
+		vSetzeZeit(dGlobaleZeit);
+		vSleep(1);
+
+		welt->vSimulieren();
+
+		dGlobaleZeit += dZeitTakt;
+	}
+
+}
 int main()
 {
-	vAufgabe_3_8();
+	vAufgabe_3_9();
 	cin.get();
 	return 0;
 }

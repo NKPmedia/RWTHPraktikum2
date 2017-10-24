@@ -18,6 +18,8 @@ public:
 	Weg(string sName, double dLaenge, GeschwindigkeitBegrenzung eLimit, bool bUeberholverbot = true);
 	~Weg();
 
+	const string type = "Weg";
+
 	void virtual vOstreamAusgabe(ostream& out);
 	void virtual vAbfertigung();
 	double dGetLaenge();
@@ -30,7 +32,7 @@ public:
 	bool bIstUeberholverbot();
 	int iParkendeFahrzeuge;
 	Fahrzeug* pZuLetztAbgefertigtesFahrzeug;
-
+	static Weg::GeschwindigkeitBegrenzung zuGeschwindigkeitBegrenzung(double);
 	void vAnnehmen(Fahrzeug* fahrzeug);
 	void vAnnehmen(Fahrzeug * fahrzeug, double dStartZeit);
 	void vAbgeben(Fahrzeug* fahrzeug);

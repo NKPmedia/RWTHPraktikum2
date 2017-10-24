@@ -121,17 +121,16 @@ void vAufgabe_2()
 	}
 }
 
-void vAufgabe_2_4_5()
+void vAufgabe_2_4()
 {
 	Weg* weg = new Weg("test", 20, Weg::Innerorts);
-	Weg* weg2 = new Weg("aussen", 20, Weg::Autobahnbahn);
 
 	Pkw* pPkw = new Pkw("BMW", 10, 20, 5);
 	Pkw* pPkw2 = new Pkw("Audi", 10, 20, 5);
 	Fahrrad* pFahrrad = new Fahrrad("BMX", 30);
 
 	weg->vAnnehmen(pPkw);
-	weg->vAnnehmen(pPkw2);
+	weg->vAnnehmen(pPkw2, 2);
 	weg->vAnnehmen(pFahrrad);
 
 	cout << *weg;
@@ -141,16 +140,19 @@ void vAufgabe_2_4_5()
 	cout << *pPkw2 << endl;
 	cout << *pFahrrad << endl;
 
-	dGlobaleZeit = 1.0;
+	dGlobaleZeit = 3.0;
 	weg->vAbfertigung();
+	weg->vAbfertigung();
+	cout << *weg;
 	
 	vSchreibeHeaderFahrzeugAusgabeTabelle();
 	cout << *pPkw << endl;
 	cout << *pPkw2 << endl;
 	cout << *pFahrrad << endl;
+	cout << *weg;
 }
 
-void vAufgabe_2_4_9_amEndAngekommen()
+void vAufgabe_2_4_amEndAngekommen()
 {
 	Weg* weg = new Weg("test", 20, Weg::Innerorts);
 
@@ -166,7 +168,7 @@ void vAufgabe_2_4_9_amEndAngekommen()
 	weg->vAbfertigung();
 }
 
-void vAufgabe_2_4_9_Parken()
+void vAufgabe_2_4_Parken()
 {
 	Weg* weg = new Weg("test", 20, Weg::Innerorts);
 
@@ -193,30 +195,37 @@ void vAufgabe_2_5_2()
 	weg->vAnnehmen(pFahrrad);
 
 	dGlobaleZeit = 1.0;
-	cout << dGlobaleZeit << endl;
+	cout << "G: " << dGlobaleZeit << endl;
+	vSchreibeHeaderFahrzeugAusgabeTabelle();
+	cout << *pFahrrad << endl;
+	cout << *pPkw << endl;
 	weg->vAbfertigung();
 	dGlobaleZeit = 2.0;
-	cout << dGlobaleZeit << endl;
+	cout << "G: " << dGlobaleZeit << endl;
+	cout << *pFahrrad << endl;
+	cout << *pPkw << endl;
 	weg->vAbfertigung();
 	dGlobaleZeit = 3.0;
-	cout << dGlobaleZeit << endl;
+	cout << "G: " << dGlobaleZeit << endl;
+	cout << *pFahrrad << endl;
+	cout << *pPkw << endl;
 	weg->vAbfertigung();
 }
 
-void vAufgabe_2_5_4()
+void vAufgabe_2_6()
 {
 	Weg* pWegInnen = new Weg("innen", 500, Weg::Innerorts);
-	Weg* pWegAutobahn = new Weg("aBahn", 500, Weg::Autobahnbahn);
+	Weg* pWegAutobahn = new Weg("aBahn", 500, Weg::Landstraße);
 
-	Pkw* pPkwFahr = new Pkw("BMW", 120, 5, 50);
-	Fahrrad* pFahrradPark = new Fahrrad("BMX", 30);
-	Pkw* pPkwPark = new Pkw("Audi", 130, 5, 100);
-	Fahrrad* pFahrradFahr = new Fahrrad("Velo", 30);
+	Pkw* pPkwFahr = new Pkw("Auto_un", 100, 10, 200);
+	Fahrrad* pFahrradPark = new Fahrrad("Velo_on", 50);
+	Pkw* pPkwPark = new Pkw("Auto_deux", 100, 10, 200);
+	Fahrrad* pFahrradFahr = new Fahrrad("Velo_deux", 50);
 
-	pWegInnen->vAnnehmen(pPkwFahr);
-	pWegInnen->vAnnehmen(pFahrradPark, 2);
-	pWegAutobahn->vAnnehmen(pPkwPark, 4);
-	pWegAutobahn->vAnnehmen(pFahrradFahr);
+	pWegInnen->vAnnehmen(pFahrradPark);
+	pWegInnen->vAnnehmen(pPkwFahr, 1.2);
+	pWegAutobahn->vAnnehmen(pFahrradFahr, 1.4);
+	pWegAutobahn->vAnnehmen(pPkwPark);
 
 	bInitialisiereGrafik(800, 800);
 	int koordinaten[] = { 700, 250, 100, 250 };
@@ -286,7 +295,7 @@ void vAufgabe_2_6a()
 
 int main()
 {
-	vAufgabe_2_5_4();
+	vAufgabe_2_6a();
 	cin.get();
 	return 0;
 }

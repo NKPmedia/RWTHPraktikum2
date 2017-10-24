@@ -10,6 +10,10 @@ using namespace std;
 double Pkw::p_dDefaulTankVolumen = 55;
 extern double dGlobaleZeit;
 
+Pkw::Pkw() : Fahrzeug()
+{
+}
+
 Pkw::Pkw(const Pkw & pkw)
 	: Fahrzeug(pkw.p_sName, pkw.p_dMaxGeschwindigkeit),
 	p_dVerbrauch(pkw.p_dVerbrauch),
@@ -65,11 +69,12 @@ void Pkw::vAbfertigung()
 	if (!this->bWurdeSchonAbgefertigt())
 	{
 		double zeitDifferenz = this->dBerechneZeitSeitLetzterAbfertigung();
+		this->p_dZeitLetzterAbfertigung = dGlobaleZeit;
 		double dTeilstrecke = this->p_pVerhalten->dBerechneFahrbareStrecke(this, zeitDifferenz);
 
 		double dVerbrauchAufTeilStrecke = this->dBerechneVerbrauchAufTeilstrecke(dTeilstrecke);
 
-		if (this->p_dTankinhalt >= dVerbrauchAufTeilStrecke)
+		if (this->p_dTankinhalt >= 0)
 		{
 			this->p_dTankinhalt -= dVerbrauchAufTeilStrecke;
 			this->p_dGesamtVerbrauch += dVerbrauchAufTeilStrecke;
@@ -80,7 +85,7 @@ void Pkw::vAbfertigung()
 		{
 			this->p_bTankLeer = true;
 		}
-		this->p_dZeitLetzterAbfertigung = dGlobaleZeit;
+		if (this->p_dTankinhalt < 0) this->p_dTankinhalt = 0;
 	}
 
 }
@@ -123,6 +128,15 @@ void Pkw::vOstreamAusgabe(ostream& out)
 
 	out.width(10);
 	out << this->p_dTankinhalt;
+}
+
+istream & Pkw::istreamEingabe(istream & in)
+{
+	Fahrzeug::istreamEingabe(in);
+	in >> this->p_dVerbrauch;
+	in >> this->p_dTankvolumen;
+
+	return in;
 }
 
 Pkw& Pkw::operator=(const Pkw& fahrzeugZuKopieren)

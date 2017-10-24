@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <map>
+#include <list>
 
 using namespace std;
 
@@ -10,13 +12,21 @@ public:
 	AktivesVerkehrsobjekt(string name);
 	~AktivesVerkehrsobjekt();
 
+	const string type = "AVO";
+
 	string sGetName();
 
 	void virtual vOstreamAusgabe(ostream& out);
+	istream virtual & istreamEingabe(istream& in);
 	bool operator==(const AktivesVerkehrsobjekt& rhs);
-	void virtual vAbfertigung();
+	void virtual vAbfertigung() = 0;
+	static AktivesVerkehrsobjekt* ptObjekt(string sName);
+	static void vAddPtObjekt(AktivesVerkehrsobjekt* pObjekt);
+	static void vAddPtObjekte(list<AktivesVerkehrsobjekt*> listObjekte);
+	static bool doesAVObjektNameExist(string);
 private:
 	static int p_iMaxID;
+	static map <string, AktivesVerkehrsobjekt*> mapAlleAVObjekte;
 
 	void vInitIDWithUniqueNumber();
 protected:
@@ -26,4 +36,5 @@ protected:
 	double lokaleZeit;
 };
 
-ostream& operator <<(ostream& out, AktivesVerkehrsobjekt&x);
+ostream& operator <<(ostream& out, AktivesVerkehrsobjekt& x);
+istream& operator >>(istream& in, AktivesVerkehrsobjekt& x);

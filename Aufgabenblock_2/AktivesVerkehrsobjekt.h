@@ -14,7 +14,7 @@ public:
 
 	void virtual vOstreamAusgabe(ostream& out);
 	bool operator==(const AktivesVerkehrsobjekt& rhs);
-	void virtual vAbfertigung();
+	void virtual vAbfertigung() = 0;
 private:
 	static int p_iMaxID;
 

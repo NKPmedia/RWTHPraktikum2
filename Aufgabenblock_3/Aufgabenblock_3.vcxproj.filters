@@ -78,6 +78,18 @@
     <ClCompile Include="Kreuzung.cpp">
       <Filter>Quelldateien\Verkehrsobjekte</Filter>
     </ClCompile>
+    <ClCompile Include="Welt.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ParseException.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MapException.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ExceptionString.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -136,6 +148,18 @@
     </ClInclude>
     <ClInclude Include="Kreuzung.h">
       <Filter>Headerdateien\Verkehrsobjekte</Filter>
+    </ClInclude>
+    <ClInclude Include="Welt.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ParseException.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MapException.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ExceptionString.h">
+      <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

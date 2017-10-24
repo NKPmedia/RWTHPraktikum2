@@ -60,19 +60,22 @@ void Pkw::vAbfertigung()
 {
 	if (!this->bWurdeSchonAbgefertigt())
 	{
+
 		double zeitDifferenz = this->dBerechneZeitSeitLetzterAbfertigung();
 		double dTeilstrecke = this->p_pVerhalten->dBerechneFahrbareStrecke(this, zeitDifferenz);
 
+		this->p_dZeitLetzterAbfertigung = dGlobaleZeit;
+
 		double dVerbrauchAufTeilStrecke = this->dBerechneVerbrauchAufTeilstrecke(dTeilstrecke);
 
-		if (this->p_dTankinhalt >= dVerbrauchAufTeilStrecke)
+		if (this->p_dTankinhalt > 0)
 		{
 			this->p_dTankinhalt -= dVerbrauchAufTeilStrecke;
 			this->p_dGesamtVerbrauch += dVerbrauchAufTeilStrecke;
 			this->p_dGesamtGefahreneStrecke += dTeilstrecke;
 			this->p_dAbschnittGefahreneStrecke += dTeilstrecke;
 		}
-		this->p_dZeitLetzterAbfertigung = dGlobaleZeit;
+		if (this->p_dTankinhalt < 0) this->p_dTankinhalt = 0;
 	}
 
 }

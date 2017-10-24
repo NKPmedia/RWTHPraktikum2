@@ -15,7 +15,10 @@ public:
 	Fahrzeug(string carName, double maxGeschwindigkeit);
 	~Fahrzeug();
 
+	const string type = "Fahrzeug";
+
 	void virtual vOstreamAusgabe(ostream& out);
+	istream virtual & istreamEingabe(istream& in);
 
 	double dGetGesamtGefahreneStrecke();
 	double dGetAbschnittGefahreneStrecke();

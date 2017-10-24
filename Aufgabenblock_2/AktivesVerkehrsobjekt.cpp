@@ -37,10 +37,6 @@ void AktivesVerkehrsobjekt::vOstreamAusgabe(ostream & out)
 	out << ":";
 }
 
-void AktivesVerkehrsobjekt::vAbfertigung()
-{
-}
-
 void AktivesVerkehrsobjekt::vInitIDWithUniqueNumber()
 {
 	this->p_iID = AktivesVerkehrsobjekt::p_iMaxID + 1;

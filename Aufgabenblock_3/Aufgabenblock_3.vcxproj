@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -113,6 +113,7 @@
   <ItemGroup>
     <ClCompile Include="AktivesVerkehrsobjekt.cpp" />
     <ClCompile Include="DataHalterFahrzeug.cpp" />
+    <ClCompile Include="ExceptionString.cpp" />
     <ClCompile Include="FahrAusnahme.cpp" />
     <ClCompile Include="Fahrrad.cpp" />
     <ClCompile Include="Fahrzeug.cpp" />
@@ -122,14 +123,18 @@
     <ClCompile Include="Kreuzung.cpp" />
     <ClCompile Include="Losfahren.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MapException.cpp" />
     <ClCompile Include="MathTools.cpp" />
+    <ClCompile Include="ParseException.cpp" />
     <ClCompile Include="Pkw.cpp" />
     <ClCompile Include="Streckenende.cpp" />
     <ClCompile Include="Weg.cpp" />
+    <ClCompile Include="Welt.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AktivesVerkehrsobjekt.h" />
     <ClInclude Include="DataHalterFahrzeug.h" />
+    <ClInclude Include="ExceptionString.h" />
     <ClInclude Include="FahrAusnahme.h" />
     <ClInclude Include="Fahrrad.h" />
     <ClInclude Include="Fahrzeug.h" />
@@ -141,12 +146,15 @@
     <ClInclude Include="LazyListe.h" />
     <ClInclude Include="Losfahren.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="MapException.h" />
     <ClInclude Include="MathTools.h" />
+    <ClInclude Include="ParseException.h" />
     <ClInclude Include="Pkw.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SimuClient.h" />
     <ClInclude Include="Streckenende.h" />
     <ClInclude Include="Weg.h" />
+    <ClInclude Include="Welt.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="SimuClient.lib" />

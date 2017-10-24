@@ -8,6 +8,8 @@ public:
 	static double const iABZUGPRO20KM;
 	static double const dMINGESCHWINDIGKEIT;
 
+	const string type = "Fahrrad";
+
 	Fahrrad();
 	Fahrrad(string carName);
 	Fahrrad(string carName, double maxGeschwindigkeit);

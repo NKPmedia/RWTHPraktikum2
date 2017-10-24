@@ -90,10 +90,11 @@ void Fahrzeug::vAbfertigung()
 	if (!this->bWurdeSchonAbgefertigt())
 	{
 		double zeitDifferenz = this->dBerechneZeitSeitLetzterAbfertigung();
+		this->p_dZeitLetzterAbfertigung = dGlobaleZeit;
 		double dFahrbareStrecke = this->p_pVerhalten->dBerechneFahrbareStrecke(this, zeitDifferenz);
 		this->p_dGesamtGefahreneStrecke += dFahrbareStrecke;
 		this->p_dAbschnittGefahreneStrecke += dFahrbareStrecke;
-		this->p_dZeitLetzterAbfertigung = dGlobaleZeit;
+		
 	}
 }
 

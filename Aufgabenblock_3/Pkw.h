@@ -5,16 +5,20 @@ class Pkw :
 	public Fahrzeug
 {
 public:
+	Pkw();
 	Pkw(const Pkw& pkw);
 	Pkw(string sFahrzeugName, double dMaxGeschwindigkeit, double dVerbrauch);
 	Pkw(string sFahrzeugName, double dMaxGeschwindigkeit, double dVerbrauch, double dTankVolumen);
 	~Pkw();
+
+	const string type = "PKW";
 
 	void virtual vAbfertigung();
 
 	double dBerechneGesamtVerbrauch();
 	double virtual dTanken(double dMenge = -1);
 	void virtual vOstreamAusgabe(ostream& out);
+	istream virtual & istreamEingabe(istream& in);
 	Pkw& operator=(const Pkw& fahrzeugZuKopieren);
 	void virtual vZeichnen(Weg* pWeg);
 

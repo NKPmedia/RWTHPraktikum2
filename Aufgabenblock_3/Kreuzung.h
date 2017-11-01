@@ -27,7 +27,7 @@ public:
 
 	void vTanken(Fahrzeug* pZuTankenesFahrzeug);
 	void vAnnehmen(Fahrzeug* fahrzeug, double);
-	void vAbfertigen();
+	void virtual vAbfertigung();
 	Weg* pZufaelligerWeg(Weg*);
 
 	void vSetTankstelle(double volumen);

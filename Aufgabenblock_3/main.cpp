@@ -387,10 +387,10 @@ void vAufgabe_3_8()
 			kr1->vAnnehmen(pPkwPark, 12);
 		}
 
-		kr1->vAbfertigen();
-		kr2->vAbfertigen();
-		kr3->vAbfertigen();
-		kr4->vAbfertigen();
+		kr1->vAbfertigung();
+		kr2->vAbfertigung();
+		kr3->vAbfertigung();
+		kr4->vAbfertigung();
 
 		dGlobaleZeit += dZeitTakt;
 	}
@@ -399,9 +399,9 @@ void vAufgabe_3_8()
 
 void vAufgabe_3_9()
 {
-	//bInitialisiereGrafik(1000, 1000);
+	bInitialisiereGrafik(1000, 1000);
 
-	ifstream fin("Simu.dat");
+	ifstream fin("SimuDisplay.dat");
 	if (!fin.good())
 	{
 		cout << "ERROR mit Datei" << endl;

@@ -57,7 +57,7 @@ void Kreuzung::vAnnehmen(Fahrzeug * fahrzeug, double zeit)
 	weg->vAnnehmen(fahrzeug, zeit);
 }
 
-void Kreuzung::vAbfertigen()
+void Kreuzung::vAbfertigung()
 {
 	list<Weg*>::iterator it;
 	for (it = this->p_pWegfuehrendeStraﬂen.begin(); it != this->p_pWegfuehrendeStraﬂen.end(); it++)

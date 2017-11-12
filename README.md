@@ -28,6 +28,8 @@ Funktionen:
   Ein Straße zum Test vom Überholen und dem Zeitverzögertem Starten
   - vAufgabe_3_8
   Das statische Straßennetz. 3 Autos fahren.
+  - vAufgabe_3_9
+  Dynamisches Straßennetz wird aus Datei geladen und simuliert
 
 Ich rate nicht meinen Code 1 zu 1 zu übernehmen. Das hilft nicht und wird vor allem bei Testaten nicht akzeptiert.
 Mein Code ist rein als Inspiration gedacht, falls man keine gute Idee hat.
